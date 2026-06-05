@@ -3,8 +3,8 @@
 #!desc=FixCopymanga
 
 [Header Rewrite]
-http-request ^https:\/\/sz\.mangafunb\.fun\/ header-replace user-agent duoTuoCartoon/3.3.2 (iPhone; iOS 18.4; Scale/3.00)
-http-request ^https:\/\/api\.2025copy\.com\/ header-replace user-agent duoTuoCartoon/3.3.2 (iPhone; iOS 18.4; Scale/3.00) iDOKit/1.0.0 RSSX/1.0.0
+http-request ^https:\/\/sn\.mangafunb\.fun\/ header-replace user-agent duoTuoCartoon/3.3.2 (iPhone; iOS 18.4; Scale/3.00)
+http-request ^https:\/\/api\.2026copy\.com\/ header-replace user-agent duoTuoCartoon/3.3.2 (iPhone; iOS 18.4; Scale/3.00) iDOKit/1.0.0 RSSX/1.0.0
 
 [MITM]
-hostname = sz.mangafunb.fun,api.2025copy.com
+hostname = sn.mangafunb.fun,api.2026copy.com
