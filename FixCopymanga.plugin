@@ -2,8 +2,8 @@
 title = FixCopymanga
 
 [MITM]
-hostname = sz.mangafunb.fun,api.2025copy.com
+hostname = sn.mangafunb.fun,api.2026copy.com
 
 [Rewrite]
-^https:\/\/sz\.mangafunb\.fun\/ header-replace user-agent duoTuoCartoon/3.3.2\x20(iPhone;\x20iOS\x2018.4;\x20Scale/3.00)
-^https:\/\/api\.2025copy\.com\/ header-replace user-agent duoTuoCartoon/3.3.2\x20(iPhone;\x20iOS\x2018.4;\x20Scale/3.00)\x20iDOKit/1.0.0\x20RSSX/1.0.0
+^https:\/\/sn\.mangafunb\.fun\/ header-replace user-agent duoTuoCartoon/3.3.2\x20(iPhone;\x20iOS\x2018.4;\x20Scale/3.00)
+^https:\/\/api\.2026copy\.com\/ header-replace user-agent duoTuoCartoon/3.3.2\x20(iPhone;\x20iOS\x2018.4;\x20Scale/3.00)\x20iDOKit/1.0.0\x20RSSX/1.0.0
