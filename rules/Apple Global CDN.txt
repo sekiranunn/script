@@ -1,6 +1,7 @@
 #
 # Apple Global CDN
 #
+pay.apple.com
 # iOS App Store
 iosapps.itunes.apple.com
 # Mac App Store
