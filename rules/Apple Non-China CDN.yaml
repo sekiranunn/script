@@ -2,6 +2,7 @@ payload:
 #
 # Apple Non-China CDN
 #
+- DOMAIN,pay.apple.com
 # Trailer
 - DOMAIN-SUFFIX,hls.itunes.apple.com
 # Movie Stream
