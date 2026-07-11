@@ -1,6 +1,7 @@
 #
 # Apple Non-China CDN
 #
+pay.apple.com
 # Trailer
 .hls.itunes.apple.com
 # Movie Stream
