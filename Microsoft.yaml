@@ -1,0 +1,8 @@
+payload:
+- DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+- DOMAIN-SUFFIX,update.microsoft.com,DIRECT
+- DOMAIN-SUFFIX,download.microsoft.com,DIRECT
+- DOMAIN,wustat.windows.com,DIRECT
+- DOMAIN,ntservicepack.microsoft.com,DIRECT
+- DOMAIN,go.microsoft.com,DIRECT
+- DOMAIN-SUFFIX,delivery.mp.microsoft.com,DIRECT
