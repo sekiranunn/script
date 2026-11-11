@@ -1,5 +1,5 @@
-#!name=Apple SystemApp Asset Fix
-#!desc=内部构建把系统 App 资产清单指向 basejumper.apple.com，此处请求级改写回 mesu.apple.com。需要 MITM，且 mobileassetd 必须信任你的根证书，否则握手阶段就会被拒。
+#!name=Apple Internal Asset Redirect
+#!desc=InternalBuild 打开后系统守护进程会走 Apple 内部域名（basejumper / gdmf-staging-int），公网无地址记录。此处请求级改写回 mesu.apple.com 和 gdmf.apple.com。需要 MITM，且对应守护进程必须信任你的根证书。gateway.push.apple.com 是 APNs 二进制通道，无法用本插件处理。
 #!category=Apple
 
 [Rule]
@@ -7,8 +7,8 @@ DOMAIN-SUFFIX,mesu.apple.com,DIRECT
 DOMAIN-SUFFIX,gdmf.apple.com,DIRECT
 
 [Script]
-# com.apple.MobileAsset.SystemApp 清单：basejumper -> mesu
-http-request ^https?:\/\/basejumper\.apple\.com\/ script-path=https://raw.githubusercontent.com/sekiranunn/script/main/apple_systemapp_asset.js, requires-body=false, timeout=30, tag=AppleSystemAppAsset
+# basejumper -> mesu（系统 App 清单）、gdmf-staging-int -> gdmf（OTA 元数据）
+http-request ^https?:\/\/(basejumper|gdmf-staging-int)\.apple\.com\/ script-path=https://raw.githubusercontent.com/sekiranunn/script/main/apple_systemapp_asset.js, requires-body=false, timeout=30, tag=AppleInternalAsset
 
 [MITM]
-hostname = basejumper.apple.com
+hostname = basejumper.apple.com, gdmf-staging-int.apple.com
