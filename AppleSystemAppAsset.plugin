@@ -1,0 +1,14 @@
+#!name=Apple SystemApp Asset Fix
+#!desc=内部构建把系统 App 资产清单指向 basejumper.apple.com，此处请求级改写回 mesu.apple.com。需要 MITM，且 mobileassetd 必须信任你的根证书，否则握手阶段就会被拒。
+#!category=Apple
+
+[Rule]
+DOMAIN-SUFFIX,mesu.apple.com,DIRECT
+DOMAIN-SUFFIX,gdmf.apple.com,DIRECT
+
+[Script]
+# com.apple.MobileAsset.SystemApp 清单：basejumper -> mesu
+http-request ^https?:\/\/basejumper\.apple\.com\/ script-path=https://raw.githubusercontent.com/sekiranunn/script/main/apple_systemapp_asset.js, requires-body=false, timeout=30, tag=AppleSystemAppAsset
+
+[MITM]
+hostname = basejumper.apple.com
