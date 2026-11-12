@@ -1,9 +1,12 @@
 #!name=Apple Internal Asset Redirect
-#!desc=InternalBuild 打开后系统守护进程会走 Apple 内部域名（basejumper / gdmf-staging-int），公网无地址记录。此处请求级改写回 mesu.apple.com 和 gdmf.apple.com。需要 MITM，且对应守护进程必须信任你的根证书。gateway.push.apple.com 是 APNs 二进制通道，无法用本插件处理。
+#!desc=改写 InternalBuild 触发的内部资产域名，并拦截已废弃的 APNs 网关。
 #!category=Apple
 
+[Rule]
+DOMAIN,gateway.push.apple.com,REJECT
+
 [Script]
-# basejumper -> mesu（系统 App 清单）、gdmf-staging-int -> gdmf（OTA 元数据）
+# 内部资产域名 -> 公网域名
 http-request ^https?:\/\/(basejumper|gdmf-staging-int)\.apple\.com\/ script-path=https://raw.githubusercontent.com/sekiranunn/script/main/apple_systemapp_asset.js, requires-body=false, timeout=30, tag=AppleInternalAsset
 
 [MITM]
